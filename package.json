@@ -1,0 +1,40 @@
+{
+  "name": "multi-page-event-bus",
+  "version": "0.0.1",
+  "description": "多页面事件总线",
+  "main": "./dist/server.js",
+  "browser": "./dist/client.js",
+  "scripts": {
+    "build:dev": "NODE_ENV=development ./node_modules/.bin/gulp",
+    "build": "NODE_ENV=production ./node_modules/.bin/gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peigong/MultiPageEventBus.git"
+  },
+  "keywords": [
+    "多页面事件总线"
+  ],
+  "author": "",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/peigong/MultiPageEventBus/issues"
+  },
+  "homepage": "https://github.com/peigong/MultiPageEventBus#readme",
+  "dependencies": {
+    "fbemitter": "^2.1.1",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/register": "^7.0.0-beta.40",
+    "del": "^3.0.0",
+    "express": "^4.16.2",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0-beta.1",
+    "gulp-load-plugins": "^1.5.0"
+  }
+}
