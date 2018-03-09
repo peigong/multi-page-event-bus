@@ -2,24 +2,19 @@ import del from 'del';
 import gulp from 'gulp';
 import loadPlugins from 'gulp-load-plugins';
 
-import clientOptions from './build/babel.client.json';
-import serverOptions from './build/babel.server.json';
+import conf from './build/conf';
+import rollup from './build/rollup.js';
 
 const $ = loadPlugins();
 
 const error = console.error.bind( console ); // eslint-disable-line no-console
-const clean = () => del([ 'dist' ]);
+const clean = () => del([ conf.build.dest ]);
 
-function buildServer(){
-    return gulp.src('./src/server.es6')
-    .pipe($.babel(serverOptions))
-    .pipe(gulp.dest('./dist'));
+function server(){
+    return gulp.src(conf.build.server.src)
+    .pipe($.babel(conf.babel.server))
+    .pipe(gulp.dest(conf.build.dest));
 }
-function buildClient(done){
-    return gulp.src('./src/client.es6')
-    .pipe($.babel(clientOptions))
-    .pipe(gulp.dest('./dist'));
-}
-const build = gulp.series(clean, gulp.parallel(buildServer, buildClient));
+const build = gulp.series(clean, gulp.parallel(server, rollup.build));
 export { build };
 export default build;
