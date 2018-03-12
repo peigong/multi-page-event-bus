@@ -7,11 +7,21 @@
     <title></title>
     <style type="text/css">
     </style>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="/client.iife.js"></script>
 </head>
 <body>
-    OK
     <script>
+        var bus = MultiPageEventBus;
+        var id = (new Date()).getTime();
+        var counter = 0;
+        bus.on('clk', function(o){
+            console.log(JSON.stringify(o));
+        });
+        document.onclick = function(){
+            counter++;
+            bus.emit('clk', { id: id, counter: counter });
+        }
     </script>
 </body>
 </html>
