@@ -3,7 +3,7 @@ import { EventEmitter } from 'eventemitter3';
 let bus = {};
 const EE = new EventEmitter();
 
-const socket = io('/multi-page-event-bus');
+const socket = io('/NAME');
 socket.on('broadcast', (o) => {
     try{
         let json = JSON.parse(o);

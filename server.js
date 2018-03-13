@@ -4,6 +4,7 @@ var io = require('./dist/server.js');
 
 var app = express();
 app.use(express.static('dist'));
+app.use(express.static('tmp'));
 app.use(express.static('stub'));
 app.use('/a', express.static('stub'));
 app.use('/a/b', express.static('stub'));
