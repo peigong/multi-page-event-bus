@@ -12,22 +12,30 @@
 </head>
 <body>
     <p>点击页面，console.log看效果</p>
+    <h2>CommonJS</h2>
     <ul>
         <li><a target="_blank" href="/index.html">/index.html</a></li>
         <li><a target="_blank" href="/a/index.html">/a/index.html</a></li>
         <li><a target="_blank" href="/a/b/index.html">/a/b/index.html</a></li>
         <li><a target="_blank" href="/a/b/index.html">/a/b/c/index.html</a></li>
     </ul>
+    <h2>IIFE</h2>
+    <ul>
+        <li><a target="_blank" href="/iife.html">/iife.html</a></li>
+        <li><a target="_blank" href="/a/iife.html">/a/iife.html</a></li>
+        <li><a target="_blank" href="/a/b/iife.html">/a/b/iife.html</a></li>
+        <li><a target="_blank" href="/a/b/iife.html">/a/b/c/iife.html</a></li>
+    </ul>
     <script>
         var bus = MultiPageEventBus;
         var id = (new Date()).getTime();
         var counter = 0;
         bus.on('clk', function(o){
-            console.log(JSON.stringify(o));
+            console.log(JSON.stringify(o, null, 4));
         });
         document.onclick = function(){
             counter++;
-            bus.emit('clk', { id: id, counter: counter });
+            bus.emit('clk', { id: id, module: 'cjs', counter: counter });
         }
     </script>
 </body>
