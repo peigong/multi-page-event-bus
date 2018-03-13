@@ -7,6 +7,7 @@ import Server from 'socket.io';
 function init(server){
     let io = new Server();
     io.attach(server)
+    .of('multi-page-event-bus')
     .on('connection', (socket) => {
         socket.on('broadcast', (data) => {
             socket.emit('broadcast', data);
