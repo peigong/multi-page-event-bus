@@ -1,6 +1,6 @@
 var http = require('http');
 var express = require('express');
-var io = require('./dist/server.js');
+var bus = require('./dist/server.js');
 
 var app = express();
 app.use(express.static('dist'));
@@ -17,4 +17,4 @@ var server = http.createServer(app).listen(3030, function () {
     console.log('stub app listening on 3030');
 });
 
-io.init(server);
+bus.init(server);
