@@ -1,6 +1,6 @@
 {
   "name": "multi-page-event-bus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "多页面事件总线",
   "main": "./dist/server.js",
   "browser": "./dist/client.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/peigong/MultiPageEventBus.git"
+    "url": "git+https://github.com/peigong/multi-page-event-bus.git"
   },
   "keywords": [
     "多页面事件总线"
@@ -26,9 +26,9 @@
   "author": "",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/peigong/MultiPageEventBus/issues"
+    "url": "https://github.com/peigong/multi-page-event-bus/issues"
   },
-  "homepage": "https://github.com/peigong/MultiPageEventBus#readme",
+  "homepage": "https://github.com/peigong/multi-page-event-bus#readme",
   "dependencies": {
     "socket.io": "^2.0.4"
   },
