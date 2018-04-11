@@ -21,7 +21,9 @@
 	var bus = require('multi-page-event-bus');
 	bus.init(server);
 
-**备注：**参数`server`是一个`net.Server`实例。`express`实例的`listen`方法、`http.createServer`创建的实例的`listen`方法，都可以返回所需要的`net.Server`参数。
+**备注：**
+
+参数`server`是一个`net.Server`实例。`express`实例的`listen`方法、`http.createServer`创建的实例的`listen`方法，都可以返回所需要的`net.Server`参数。
 
 ## 客户端使用 ##
 
